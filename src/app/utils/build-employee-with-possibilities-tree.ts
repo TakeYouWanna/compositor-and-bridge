@@ -6,14 +6,17 @@ import { User } from '../models/user.model';
 
 export const buildEmployeeWithPossibilities = (
   user: User,
-  possibilities: UserPossibilities
+  userPossibilities: UserPossibilities
 ) => {
   if (user.children.length) {
-    const director = new DirectorWithPossibilities(user.name, possibilities);
+    const director = new DirectorWithPossibilities(
+      user.name,
+      userPossibilities
+    );
     user.children.forEach((child) => {
       const childEmployee = buildEmployeeWithPossibilities(
         child,
-        possibilities
+        userPossibilities
       );
       director.addChild(childEmployee);
     });
@@ -21,7 +24,7 @@ export const buildEmployeeWithPossibilities = (
   }
   const subordinate: Subordinate = new SubordinateWithPossibilities(
     user.name,
-    possibilities
+    userPossibilities
   );
   return subordinate;
 };

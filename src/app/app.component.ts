@@ -17,10 +17,10 @@ export class AppComponent implements OnInit {
   public employee!: Employee;
 
   ngOnInit(): void {
-    const angularPossibilities = new AngularEmployeePossibilities();
+    const angularEmployeePossibilities = new AngularEmployeePossibilities();
     const directorDima = buildEmployeeWithPossibilities(
       USER_DIMON,
-      angularPossibilities
+      angularEmployeePossibilities
     );
     this.employee = directorDima;
   }
