@@ -1,20 +1,12 @@
 <ng-template #employeeCard let-employee>
-  <div class="employees-wrapper">
-    <div class="employee-data">
-      <p
-        [class.selected]="employee.isSelected"
-        class="employee-data__name"
-        (click)="employee.changeSelectionState()"
-      >
-        {{ employee.name }}
-      </p>
-      <p
-        class="employee-data__possibilities"
-        (click)="checkPossibilities(employee.possibilities)"
-      >
-        ?
-      </p>
-    </div>
+  <div class="employee">
+    <p
+      [class.selected]="employee.isSelected"
+      class="employee__name"
+      (click)="employee.changeSelectionState()"
+    >
+      {{ employee.name }}
+    </p>
     <div *ngFor="let child of employee.children">
       <ng-container
         *ngTemplateOutlet="employeeCard; context: { $implicit: child }"

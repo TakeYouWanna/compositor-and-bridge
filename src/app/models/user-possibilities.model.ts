@@ -1,4 +1,4 @@
 export interface UserPossibilities {
   direction: string;
-  getPossibilities: { (): string };
+  getPossibilities: { (name: string): string };
 }

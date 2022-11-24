@@ -24,9 +24,4 @@ export class AppComponent implements OnInit {
     );
     this.employee = directorDima;
   }
-
-  public checkPossibilities(possibilities: UserPossibilities): void {
-    const concretePossibilities = possibilities.getPossibilities();
-    console.log(concretePossibilities);
-  }
 }

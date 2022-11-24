@@ -8,4 +8,10 @@ export class DirectorWithPossibilities extends Director {
     super(name);
     this.possibilities = possibilities;
   }
+
+  public override changeSelectionState(): void {
+    const possibilities = this.possibilities.getPossibilities(this.name);
+    console.log(possibilities);
+    super.changeSelectionState();
+  }
 }
