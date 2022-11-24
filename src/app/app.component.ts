@@ -1,3 +1,4 @@
+import { UserPossibilities } from './models/user-possibilities.model';
 import { AngularEmployeePossibilities } from './classes/angular-employee-possibilieies';
 import { USER_DIMON } from './constants/users-tree';
 import { Component, OnInit } from '@angular/core';
@@ -22,5 +23,10 @@ export class AppComponent implements OnInit {
       angularPossibilities
     );
     this.employee = directorDima;
+  }
+
+  public checkPossibilities(possibilities: UserPossibilities): void {
+    const concretePossibilities = possibilities.getPossibilities();
+    console.log(concretePossibilities);
   }
 }

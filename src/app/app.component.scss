@@ -1,17 +1,30 @@
-.employee {
+.employees-wrapper {
   margin-left: 30px;
 
-  &__name {
-    padding: 5px;
-    border: 2px solid black;
-    width: fit-content;
-    font-size: 20px;
-    cursor: pointer;
-    user-select: none;
+  .employee-data {
+    display: flex;
+    align-items: center;
 
-    &.selected {
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
+    &__possibilities,
+    &__name {
+      font-size: 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    &__possibilities {
+      margin-left: 10px;
+    }
+
+    &__name {
+      padding: 5px;
+      border: 2px solid black;
+      width: fit-content;
+
+      &.selected {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+      }
     }
   }
 }
