@@ -2,11 +2,11 @@ import { Director } from '../classes/director';
 import { Subordinate } from '../classes/subordinate';
 import { User } from '../models/user.model';
 
-export const buildEmployeesTreeFromUser = (user: User) => {
+export const buildEmployee = (user: User) => {
   if (user.children.length) {
     const director = new Director(user.name);
     user.children.forEach((child) => {
-      const childEmployee = buildEmployeesTreeFromUser(child);
+      const childEmployee = buildEmployee(child);
       director.addChild(childEmployee);
     });
     return director;

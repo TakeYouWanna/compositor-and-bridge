@@ -1,7 +1,9 @@
+import { AngularEmployeePossibilities } from './classes/angular-employee-possibilieies';
 import { USER_DIMON } from './constants/users-tree';
 import { Component, OnInit } from '@angular/core';
-import { buildEmployeesTreeFromUser } from './utils/build-employee-tree-from-user';
+import { buildEmployee } from './utils/build-employee-tree';
 import { Employee } from './classes/employee';
+import { buildEmployeeWithPossibilities } from './utils/build-employee-with-possibilities-tree';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,11 @@ export class AppComponent implements OnInit {
   public employee!: Employee;
 
   ngOnInit(): void {
-    const directorDima = buildEmployeesTreeFromUser(USER_DIMON);
+    const angularPossibilities = new AngularEmployeePossibilities();
+    const directorDima = buildEmployeeWithPossibilities(
+      USER_DIMON,
+      angularPossibilities
+    );
     this.employee = directorDima;
   }
 }
